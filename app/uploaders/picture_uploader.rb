@@ -5,11 +5,14 @@ class PictureUploader < CarrierWave::Uploader::Base
   process resize_to_limit: [400, 400]
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
-    strage :fog
-  else
-    storage :file
-  end
+  # if Rails.env.production?
+  #   strage :fog
+  # else
+  #   storage :file
+  # end
+
+  storage :file
+
   # storage :fog
 
   # アップロードファイルの保存先ディレクトリは上書き可能
